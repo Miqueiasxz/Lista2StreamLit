@@ -112,4 +112,3 @@ st.pyplot(fig)
 
 # Adicionando uma seção para mostrar as estatísticas descritivas dos atributos numéricos do dataset
 st.subheader("Estatísticas Descritivas dos Atributos Numéricos")
-st.write(data.describe())
