@@ -7,7 +7,7 @@ import seaborn as sns
 # Fonte de Dados
 # https://www.kaggle.com/datasets/whenamancodes/student-performance
 
-
+# Especificando o título da página e o ícone
 st.set_page_config(page_title="Dashboard - Student Dataset", page_icon=":books:")
 
 # sidebar
