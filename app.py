@@ -100,12 +100,12 @@ st.pyplot(fig)
 # Adicionando uma tabela para mostrar a média de idade dos estudantes por escola
 st.subheader("Média de Idade dos Estudantes por Escola")
 school_mean_age = data.groupby('school')['age'].mean()
-st.table(school_mean_age)
+st.table(school_mean_age
 
 # Adicionando um gráfico de dispersão para mostrar a relação entre o tempo de estudo semanal e o número de faltas
 st.subheader("Relação entre Tempo de Estudo Semanal e Número de Faltas")
 fig, ax = plt.subplots()
-sns.scatterplot(x=data['studytime'], y=data['absences']
+sns.scatterplot(x=data['studytime'], y=data['absences'])
 ax.set_xlabel('Tempo de Estudo Semanal')
 ax.set_ylabel('Número de Faltas')
 st.pyplot(fig)
