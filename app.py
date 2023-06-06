@@ -4,10 +4,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Fonte de Dados
+# Fonte de foram tirados os Dados
 # https://www.kaggle.com/datasets/whenamancodes/student-performance
 
-# Especificando o título da página e o ícone
+# Especificação o título da página e o ícone
 st.set_page_config(page_title="Dashboard - Student Dataset", page_icon=":books:")
 
 # sidebar
@@ -21,7 +21,7 @@ show_dataset_description = st.sidebar.checkbox("Descrição do Dataset")
 
 graph1_type = st.sidebar.selectbox("Gráfico 1: Selecione o tipo de gráfico", ("Barra", "Pizza", "Dispersão", "Histograma", "Boxplot"))
 
-# Carregando o dataset
+# Carregamento do dataset
 gsheets_math_id = "1392993996"
 gsheets_portuguese_id = "0"
 
@@ -35,7 +35,7 @@ def load_data(sheets_url):
 
 data = load_data(gsheets_url)
 
-# Adicionando um título
+# Título
 st.title("Análise de Dados do Dataset de Estudantes")
 
 # Descritivo do dataset
@@ -97,12 +97,12 @@ else:
     ax.set_ylabel('Número de Estudantes')
 st.pyplot(fig)
 
-# Adicionando uma tabela para mostrar a média de idade dos estudantes por escola
+# Tabela para mostrar a média de idade dos estudantes por escola
 st.subheader("Média de Idade dos Estudantes por Escola")
 school_mean_age = data.groupby('school')['age'].mean()
 st.table(school_mean_age)
 
-# Adicionando um gráfico de dispersão para mostrar a relação entre o tempo de estudo semanal e o número de faltas
+# Gráfico de dispersão para mostrar a relação entre o tempo de estudo semanal e o número de faltas
 st.subheader("Relação entre Tempo de Estudo Semanal e Número de Faltas")
 fig, ax = plt.subplots()
 sns.scatterplot(x=data['studytime'], y=data['absences'])
@@ -110,6 +110,6 @@ ax.set_xlabel('Tempo de Estudo Semanal')
 ax.set_ylabel('Número de Faltas')
 st.pyplot(fig)
 
-# Adicionando uma seção para mostrar as estatísticas descritivas dos atributos numéricos do dataset
+# Adição de uma seção para mostrar as estatísticas descritivas dos atributos numéricos do dataset
 st.subheader("Estatísticas Descritivas dos Atributos Numéricos")
 st.write(data.describe())
